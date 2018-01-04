@@ -1,0 +1,87 @@
+<!-- <HTML>
+<HEAD><TITLE>Koliko dana do kraja godine?</TITLE></HEAD>
+<BODY>
+  <input type="date" id="datum1">
+  <input type="date" id="datum2">
+
+  <button onclick="myFunction()">Izracunaj</button>
+
+  <p id="demo"></p>
+
+  <script>
+  function myFunction() {
+      var x = document.getElementById("datum1").value;
+      document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+  <HR>
+  <script language="JavaScript" type="text/javascript">
+    danas = new Date(); // danasnje vreme i datum
+    kraj_god = new Date(); // kraj godine
+    kraj_god.setMonth(11); // je u decembru
+    kraj_god.setDate(31); // 31. dana u mesecu
+    // Koliko ima milisekundi izmedju 31.12. i danasnjeg dana
+     razlika = kraj_god.getTime() - danas.getTime();
+     
+    // A koliko je to dana
+    razlika = Math.floor( razlika/ (1000*60*60*24) );
+    
+     document.write("<h2 align=center>Broj dana do kraja godine je " + razlika + "!!!</h2>");
+   </SCRIPT>
+  <HR>
+
+</BODY>
+</HTML> -->
+
+
+<!-- <!DOCTYPE html>
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+function izmeniTekst(){
+var oldHTML =
+document.getElementById('tekstParagrafa').innerHTML;
+var newHTML = "<span style='color:#ff0fff'>" + oldHTML +
+"</span>";
+document.getElementById('tekstParagrafa').innerHTML = newHTML;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+  <input type="date" id="datum1">
+  <input type="date" id="datum2">
+<p id='tekstParagrafa'>Programiranje <b id='boldovano'>Osnove Programiranja</b>
+</p>
+<input type='button' onclick='izmeniTekst()' value='Izmeni
+tekst'/>
+</BODY>
+</HTML> -->
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+function unetiBrojeve(){
+var m, n, rezultat;
+m = document.getElementById('broj1').value;
+n = document.getElementById('broj2').value;
+rezultat = parseInt(m)==parseInt(n);
+if(rezultat==true)
+rezultat='brojevi su isti';
+else
+rezultat='brojevi nisu isti';
+document.getElementById("rezultat").innerHTML = 'Rezultat: ' +
+rezultat;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<p>Unesite brojeve u polja: </b> </p>
+<input id='broj1' />
+<input id='broj2' />
+<p id="rezultat"> Rezultat?</p>
+<input type='button' onclick=' unetiBrojeve()' value='Uporedite
+da li su brojevi jednaki'/>
+</BODY>
+</HTML>
+

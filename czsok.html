@@ -1,0 +1,374 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10.18
+-- https://www.phpmyadmin.net
+--
+-- Host: 10.105.36.236:3306
+-- Generation Time: Apr 20, 2017 at 10:49 PM
+-- Server version: 5.6.35
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = 
+
+"NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET 
+
+@OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `czsok_jo151`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 
+
+`anlr_content`
+--
+
+CREATE TABLE IF NOT EXISTS `anlr_content` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(255) COLLATE 
+
+utf8_unicode_ci NOT NULL,
+  `title_alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `introtext` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `fulltext` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  
+
+`state` tinyint(3) NOT NULL DEFAULT '0',
+  `sectionid` int(11) unsigned NOT NULL DEFAULT '0',
+  `mask` int(11) unsigned NOT NULL DEFAULT '0',
+  `catid` int(11) unsigned NOT NULL DEFAULT '0',
+  `created` datetime 
+
+NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `created_by_alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `modified` datetime NOT NULL DEFAULT '0000-00
+
+-00 00:00:00',
+  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` 
+
+datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `images` text COLLATE utf8_unicode_ci NOT NULL,
+  `urls` text COLLATE utf8_unicode_ci NOT 
+
+NULL,
+  `attribs` text COLLATE utf8_unicode_ci NOT NULL,
+  `version` int(11) unsigned NOT NULL DEFAULT '1',
+  `parentid` int(11) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  
+
+`metakey` text COLLATE utf8_unicode_ci NOT NULL,
+  `metadesc` text COLLATE utf8_unicode_ci NOT NULL,
+  `access` int(11) unsigned NOT NULL DEFAULT '0',
+  `hits` int(11) unsigned NOT NULL DEFAULT '0',
+  `metadata` 
+
+text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_section` (`sectionid`),
+  KEY `idx_access` (`access`),
+  KEY `idx_checkout` (`checked_out`),
+  KEY `idx_state` (`state`),
+  KEY `idx_catid` 
+
+(`catid`),
+  KEY `idx_createdby` (`created_by`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=50 ;
+
+--
+-- Dumping data for table `anlr_content`
+--
+
+INSERT INTO `anlr_content` (`id`, 
+
+`title`, `alias`, `title_alias`, `introtext`, `fulltext`, `state`, `sectionid`, `mask`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, 
+
+`publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `parentid`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`) VALUES
+(43, 'Example Pages and Menu Links', 'example-pages-
+
+and-menu-links', '', '<p>This page is an example of content that is <em>Uncategorized</em>; that is, it does not belong to any Section or Category. You will see there is a new Menu in the left column. It 
+
+shows links to the same content presented in 4 different page layouts.</p><ul><li>Section Blog</li><li>Section Table</li><li> Blog Category</li><li>Category Table</li></ul><p>Follow the links in the 
+
+<strong>Example Pages</strong> Menu to see some of the options available to you to present all the different types of content included within the default installation of Joomla!.</p><p>This includes 
+
+Components and individual Articles. These links or Menu Item Types (to give them their proper name) are all controlled from within the <strong><font face="courier new,courier">Menu Manager-&gt;[menuname]-
+
+&gt;Menu Items Manager</font></strong>. </p>', '', -2, 0, 0, 0, '2008-08-12 09:26:52', 62, '', '2008-08-12 09:26:52', 62, 0, '0000-00-00 00:00:00', '2006-10-11 10:00:00', '0000-00-00 00:00:00', '', '', 
+
+'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=
+
+\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 7, 0, 0, 'Uncategorized, Uncategorized, Example Pages and Menu Links', '', 0, 43, 'robots=\nauthor='),
+(46, 'O nama', 'o-nama', '', '<p style="margin-
+
+bottom: 0in" align="justify"><strong style="color: #222222; font-family: arial, sans-serif; font-size: 13px; line-height: normal;">Centar za stručno osposobljavanje kadrova d.o.o. Beograd</strong>, nastao je 
+
+iz stalne potrebe građana da unaprede sebe, steknu nova znanja, veštine, <span>reše probleme u vezi sa pronalaženjem posla ili zadržavanjem istog.</span></p>\r\n<p style="margin-bottom: 0in" 
+
+align="justify"> </p>\r\n<p style="margin-bottom: 0in" align="justify"><span>Centar je osnovan 1997. godine, Rešenjem Privrednog suda u Beogradu pod brojem I-fi 1895/97, U svom višegodišnjem poslovanju, 
+
+Centar je ostvario veoma uspešnu i dugotrajnu saradnju sa brojnim preduzećima i firmama širom Srbije, Republike Srpske i Crne Gore, kao što su:</span><span> ''''</span><span>Metal</span><span>'''', 
+
+</span><span>BNS </span><span>''''</span><span>Inženjering</span><span>'''', </span><span>Društvo </span><span>''''</span><span>Rom</span><span>'''', </span><span>iz Obrenovca</span><span>; 
+
+''''</span><span>Zavarivač</span><span>'''', ''''</span><span>Alfa-plam</span><span>, ''''</span><span>Jumko</span><span>'''', ''''</span><span>Simpo</span><span>'''', </span><span>iz 
+
+Vranja</span><span>;'''' ''''</span><span>Tipoplastika</span><span>'''', </span><span>GIP </span><span>''''</span><span>Graditelj</span><span>'''', </span><span>DD 
+
+</span><span>''''</span><span>Zvezda</span><span>'''', </span><span>iz Gornjeg Milanovca</span><span>;</span><span> </span><span>''''</span><span>Kramer</span><span>''''</span><span>,</span><span> 
+
+</span><span>iz Kule</span><span>; ''''</span><span>Dekor</span><span>'''' </span><span>iz Sombora</span><span>; </span><span>REIK </span><span>''''</span><span>Kolubara</span><span>'''' </span><span>iz 
+
+Lazarevca</span><span>; </span><span>Parking Servis</span><span>'''' </span><span>iz Novog Sada</span><span>; </span><span>AD 
+
+</span><span>''''</span><span>Radijator</span><span>''''</span><span>,</span><span> </span><span>iz Zrenjanina</span><span>; </span><span>PIK </span><span>''''</span><span>Bečej</span><span>'''', 
+
+</span><span>JP</span><span> </span><span>Limske</span><span> </span><span>Hidroelektrane</span><span>, </span><span>Srbija šume</span><span>, </span><span>Dom za decu i omladinu 
+
+</span><span>''''</span><span>Vera</span><span> </span><span>Blagojević</span><span>''''</span><span>,</span><span> </span><span>iz Bele Crkve;</span><span> </span><span>Američki komitet za izbeglice iz 
+
+Beograda</span><span>, Н</span><span>V</span><span>О''''ОХ</span><span>V</span><span>АМ </span><span>CB</span><span>'''' </span><span>iz Beograda</span><span>, ''''</span><span>Beograd vode</span><span>'''', 
+
+''''</span><span>Beograd put</span><span>'''', ''''Eurocom internasional'''', </span><span>IMT </span><span>''''</span><span>Simiotik</span><span>'''', ''''</span><span>Zora-zo</span><span> 
+
+</span><span>d.o.o. Beograd</span><span>, </span><span>ABS </span><span>''''</span><span>MInel-Trafo</span><span> </span><span>a.d. Mladenovac</span><span>,</span><span> ’’Udruženje humanost’’, Dom za decu 
+
+’’Moša Pijade’’, AD ’’Krušik-Plastika’’, ’’Uradi sam’’ a.d. Beograd, Građevimar Kocić d.o.o. Beograd, ’’Leon’’ d.o.o.Ub, ’’Interspeed’’ a.d., TE ’’Pljevlja’’, Rudnik uglja Pljevlja iz Crne Gore 
+
+itd.</span></p>\r\n<ul>\r\n<li><span>Više hiljada ljudi je kroz Centar stručno osposobljeno za rad za više od 200 zanimanja u okviru 29 struka, organizovanjem brojnih kurseva i obuka. </span></li>\r\n</ul>
+
+\r\n<ul>\r\n<li><span><span style="color: #222222; font-family: arial, sans-serif; font-size: 13px; line-height: normal;">Centar za stručno osposobljavanje kadrova d.o.o. Beograd</span>, obavlja delatnost 
+
+obrazovanja odraslih, koje nije u sistemu redovnog školskog obrazovanja i nije definisano prema stepenima stručnost, već na nivou kurseva i tečajeva do godinu dana, koji se izvode prema nastavnom planu i 
+
+programu Centra.</span></li>\r\n</ul>\r\n<ul>\r\n<li><span>Po završetku </span><span>stručnog osposobljavanja za rad u trajanju do godinu dana, kandidatima se izdaju odgovarajuće<strong> 
+
+</strong></span><span style="font-size: x-small;"><span><strong>DIPLOME</strong> i <strong>SERTIFIKATI</strong></span></span><span> za određeno zanimanje, a u okviru odgovarajuće struke, dok se za proveru 
+
+znanja stranih jezika i proveru brzine kucanja, izdaju odgovarajuća </span><strong><span style="font-size: x-small;"><span>UVERENJA</span></span></strong><span>.</span></li>\r\n</ul>\r\n<ul>\r\n<li><span>Za 
+
+potrebe teorijske nastave, Centar u svom timu ima veliki broj iskusnih profesora koji garantuju kvalitet u obuci kadrova za različita zanimanja.</span></li>\r\n</ul>', '', 1, 0, 0, 0, '2009-03-09 22:26:32', 
+
+62, '', '2014-10-31 08:22:46', 73, 0, '0000-00-00 00:00:00', '2009-03-09 22:26:32', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=
+
+\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 15, 0, 4, '', '', 0, 6676, 'robots=
+
+\nauthor='),
+(47, 'Zanimanja', 'zanimanja', '', '<p>Centar za stručno osposobljavanje kadrova Sopot-grad Beograd, je uradio odgovarajuće planove i programe za stručno osposobljavanje za rad, za preko 200 
+
+zanimanja u okviru 29 struka. Program stručnog osposobljavanja kadrova traje do godinu dana, i rađen je na bazi programa bivšeg II stepena stručne spreme (koji je trajao 6 meseci), a ovaj program je znatno 
+
+modifikovan i traje do godinu dana, sa ukupno 1000 sati nastave (350 sati teorijske i 650 sati praktične nastave).</p>\r\n<ul>\r\n<li>\r\n<p>Svi kandidati-polaznici moraju da imaju završenu osnovnu školu i 
+
+minimum 15 godina starosti. Polaznik je dužan da obavi praksu za traženo zanimanje, bilo da je sam obezbedio ili ga je centar uputio na obavljanje prakse.</p>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li>\r\n<p>Ispiti 
+
+se polažu usmeno ili pismeno, putem testa pred komisijom koju imenuje Centar, a koji se zakazuju u dogovoru sa kandidatima</p>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li>\r\n<p>Kandidat koji je u radnom odnosu na 
+
+određenim poslovima duže od 3 meseca može da izađe na ispite uz potvrdu o obavljenoj praksi, dobijenu i overenu od strane svog poslodavca.</p>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li>\r\n<p>Prilikom izlaska na 
+
+ispit svaki polaznik-kandidat mora da ima ličnu kartu, svedočanstvo osnovne ili srednje škole, potvrdu o obavljenoj praksi.</p>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li>\r\n<p>Cena školarine za sva zanimanja u 
+
+Centru, a zavisno od dužine trajanja stručnog osposobljavanja kreće se od 120 do 250 Evra, u dinarskoj protivvrednosti po srednjem kursu NBS na dan polaganja ispita.U cenu su uračunate konsultacije ili 
+
+teorijska nastava za najmanje 15 kandidata u grupi, skripte, ispiti i izdavanje odgovarajuće diplome, sertifikata i uverenja o položenih 9 stručnih predmeta u okviru odgovarajućeg zanimanja.</p>\r\n</li>\r
+
+\n</ul>\r\n<p style="text-indent: 0.5in; margin-bottom: 0in" align="left"> </p>', '', 1, 0, 0, 0, '2009-03-12 19:56:21', 62, '', '2013-11-13 08:53:32', 42, 0, '0000-00-00 00:00:00', '2009-03-12 19:56:21', 
+
+'0000-00-00 00:00:00', '', '', 
+
+'show_title=0\nlink_titles=0\nshow_intro=0\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_vote=0\nshow_author=0\nshow_create_date=0\nshow_modify_date=0\nshow_pdf_icon=
+
+\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 30, 0, 3, '', '', 0, 4517, 'robots=\nauthor='),
+(49, 'Tabela zanimanja ', 'tabela-zanimanja-', '', '<table style="height: 2791px;" 
+
+border="0" width="851">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<h3>VATROGASNA STRUKA</h3>\r\nRadnik fizičko-tehničkog obezbeđenja – Čuvar-Portir<br />Radnik fizičko-tehničkog i protiv-požarnog obezbeđenja (FT i PPO) 
+
+<br /></td>\r\n<td>\r\n<h3>VETERINARSKA STRUKA</h3>\r\n<p>Veterinarski radnik<br />Kinolog<br />Dreser pasa</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>GRAĐEVINSKA STRUKA</h3>\r\nArmirač-betonirac<br 
+
+/>Dimničar<br />Domar<br />Građevinski tesar<br />Građevinski stolar<br />Građevinski limar<br />Građevinski radnik u niskogradnji<br />Građevinski radnik u visokogradnji<br />Geodetski radnik – Geometar<br 
+
+/>Izolater građevinskih objekata<br />Hidrograđevinski radnik<br />Keramičarsko-teracerski radnik<br />Kamenorezačko-klesarski radnik<br />Zidarsko-fasaderski radnik<br />Molersko-farbarski radnik<br 
+
+/>Putar-asfalter<br />Podopolagač parketa – Parketar<br />Rezač stakla – Staklorezac<br />R. G. M. za niskogradnju<br />Rukovalac dizalice – Dizaličar<br />Rukovalac krana – Kranis</td>\r\n<td>\r
+
+\n<h3>GRAFIČKA STRUKA</h3>\r\nGrafički radnik – Birografičar<br />Grafički radnik – Dorade i prerade<br />Grafički radnik – Knjigovezac<br />Grafički radnik – Kartonažer<br />Grafički radnik – Montažer<br 
+
+/>Grafički radnik – Slovoslagač<br />Grafički radnik – Fotograf<br />Grafički radnik – Hemograf<br />Grafički radnik – Cinkograf<br />Grafički radnik – Crtač-Retušer<br />Pečatorezac – Graver<br />Štampar 
+
+propusne štampe – Sitoštampar<br />Štampar ravne štampe – Ofsetštampar<br />Štampar visoke štampe – Tipoštampar<br />Štampar duboke štampe\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r
+
+\n<td>\r\n<h3>GUMARSKO-PLASTIČARSKA STRUKA</h3>\r\n<p>Izrađivač gumenih proizvoda – Gumar<br />Izrađivač plastičnih proizvoda – Plastičar<br />Serviser pneumatika – Vulkanizer</p>\r\n<p> </p>\r\n<p> </p>\r
+
+\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>DRVOPRERAĐIVAČKA STRUKA</h3>\r\n<p>Drvooperater – Stolar<br />Drvostrugar<br />Drvolakirer<br />Duborezac<br />Izrađivač furnira i 
+
+ploča<br />Izrađivač roletni – Roletnar<br />Podopolagač parketa – Parketar<br />Izrađivač ramova<br />Izrađivač četki – Četkar<br />Izrađivač bačvi – Bačvar<br />Izrađivač nameštaja i galanterije od 
+
+pruća<br />Proizvođač građe<br />Tapetarski radnik<br />Autotapetarski radnik</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>ELEKTROTEHNIČKA STRUKA</h3>\r\n<p>Autoelektričarski radnik<br />Elektroinstalaterski 
+
+radnik<br />Kamerman-snimatelj<br />Kinooperater<br />Operater na elektromontaži mreže i postrojenja<br />Pogonski električar<br />Pogonski elektromehaničar za mašine i opremu<br />Serviser bele tehnike<br 
+
+/>Serviser TV i Video opreme<br />Serviser računara<br />Serviser mobilne telefonije<br />TT monter-serviser<br />Frigo serviser<br />Serviser liftov</p>\r\n</td>\r\n<td>\r\n<h3>EKONOMSKA STRUKA</h3>\r
+
+\n<p>Komercijalni operater<br />Marketinški operater<br />Knjigovodstveni operater<br />Računovodstveni operater<br />Carinski radnik<br />Carinik-špediter</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r
+
+\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>ZDRAVSTVENA STRUKA</h3>\r\n<p>Bolničar-ka<br />Babica<br />Negovateljica-vaspitač<br />Zdravstveni operater – Laborant<br />Fizioterapeutski operater – 
+
+Maser</p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>KOŽARSKA STRUKA</h3>\r\n<p>Izrađivač obuće – Obućar<br />Izrađivač kožne galanterije<br />Izrađivač gornjih delova obuće<br />Izrađivač donjih delova 
+
+obuće<br />Krznar<br />Kožuhar<br />Sarač<br />Ćurčija</p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>KULTURNO-INFORMATIVNA STRUKA</h3>\r\n<p>Novinar-reporter<br />Spiker-voditelj<br />Tonski 
+
+snimatelj<br />Fotoreporter</p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>KULTURNO-PROSVETNA STRUKA</h3>\r\n<p>Bibliotekar-knjižničar<br />Medijatekar</p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>
+
+\r\n<h3>PREHRAMBENA STRUKA</h3>\r\n<p>Pekar-buregdžija<br />Pekar-poslastičar<br />Mesar-kobasičar<br />Proizvođač mesa – Mesar<br />Pečenjar mesa<br />Pečenjar kafe<br />Proizvođač keksa i vafla – 
+
+Konditor<br />Prerađivač brašna – Mlinar<br />Prerađivač mleka – Mlekar<br />Prerađivač voća i povrća<br />Proizvođač bezalkoholnih pića i sokova<br />Proizvođač ulja – Uljar<br />Proizvođač slada i piva<br 
+
+/>Proizvođač šećera i skroba<br />Proizvođač industrijskih poslastica<br />Proizvođač prehrambenih proizvoda</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r
+
+\n<p> </p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>MAŠINSKA STRUKA</h3>\r\nAutoperač i podmazivač mot. vozila<br />Bravar-monter<br />Građevinski bravar<br />Građevinski limar<br />Gasni zavarivač-rezač<br 
+
+/>Elektrozavarivač-rezač<br />Zlatar-juvelir<br />Limar motornih vozila – Autolimar<br />Limar-izolater<br />Lemilac<br />Instalater vodovoda i kanalizacije – Vodoinstalater<br />Instalater grejanja i 
+
+klimatizacije<br />Mehaničar motornih vozila – Automehaničar<br />Mehaničar poljoprivrednih mašina – Poljoprivredni mehaničar<br />Mehaničar-rukovalac krana<br />Mehaničar-rukovalac kompresora<br />Mehaničar 
+
+alatnih mašina – Mašinbravar<br />Mehaničar za održavanje oružja – Oružar<br />Metalo-kovač<br />Metalo-preser<br />Obrađivač metala struganjem – Metalostrugar<br />Obrađivač metala glodanjem – 
+
+Metaloglodač<br />Obrađivač metala brušenjem – Metalobrusač-<br />Obrađivač metala bušenjem – Metalobušač<br />Optičar<br />Oštrač alata<br />Precizni mehaničar<br />Serviser hidraulike i pneumatike<br 
+
+/>Časovničar<br />Mehaničar građevinskih mašina – Građevinski mehanizator\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>STRUKA LIČNIH USLUGA</h3>\r\n<p>Stilista ženskih frizura<br />Stilista muških 
+
+frizura<br />Stilista Ž. i M. frizura<br />Kozmetičar-šminker<br />Kozmetičar-maser<br />Manikir-pedikir majstor</p>\r\n</td>\r\n<td>\r\n<h3>MAŠINSKO-ENERGETSKA STRUKA</h3>\r\n<p>Rukovalac parnih kotlova<br 
+
+/>Rukovalac kotlova na tečna goriva<br />Rukovalac kotlova na gasovita goriva<br />Termoenergetski mehaničar<br />Hidroenergetski mehaničar<br />Gasnoenergetski mehaničar<br />Mehaničar ložišnih i dimovodnih 
+
+uređaja</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>POLJOPRIVREDNA STRUKA</h3>\r\nRatar-traktorista<br />Ratar-povrtar<br />Voćar<br />Vinogradar<br />Voćar-vinogradar<br />Pčelar<br />Ribar<br />Uzgajivač 
+
+stoke – Stočar<br />Uzgajivač živine<br />Uzgajivač ranog povrća<br />Uzgajivač sportskih konja<br />Uzgajivač duvana<br />Traktorista<br />Kombajner<br />Traktorista-kombajner<br />Poljoprivredni 
+
+mehanizator<br />Cvećar-vrtlar<br />Zaštitar bilja</td>\r\n<td>\r\n<h3>RUDARSKO-GEOLOŠKA STRUKA</h3>\r\n<p>Bunardžija<br />Geobušački radnik<br />Rudar u jamskoj eksploataciji<br />Rudar u površinskoj 
+
+eksploataciji<br />Rukovalac rudarskom mehanizacijom na površinskom kopu<br />Rukovalac rudarskom utovarnom mehanizacijom<br />Bušač u podzemnoj jamskoj eksploataciji<br />Rukovalac rudarskom mehanizacijom u 
+
+flotaciji rude<br />Rukovalac mehanizacije za dobijanje nafte i gasa</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>PRAVNO-BIROTEHNIČKA STRUKA</h3>
+
+\r\nAdministrator-operater<br />Daktilograf-operater<br />Birotehničar-operater<br />Operater na kompjuteru<br />Poslovni sekretar-operater<br />Stenograf-operater<br />Statistički operater <br />Nabavljač 
+
+robe\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>SPORTSKO-REKREATIVNA STRUKA</h3>\r\n<p>Fudbalski trener<br />Rukometni trener<br />Košarkaški trener<br />Odbojkaški trener<br />Vaterpolo 
+
+trener<br />Fitnes trener<br />Kondicioni trener<br />Trener galopskih konjskih grla<br />Trener kasačkih konjskih grla<br />Džokej<br />Vozač sulki</p>\r\n<p> </p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r
+
+\n<td>\r\n<h3>TRGOVINSKA STRUKA</h3>\r\nAranžer izloga<br />Magacioner-skladištar<br />Prodavac mešovite robe<br />Prodavac nafte i naftnih derivata<br />Prodavac parfimerije, bižuterije i nakita<br 
+
+/>Prodavac sredstava za zaštitu bilja i semenske robe<br />Prodavac građevinskog materijala<br />Prodavac konsignacione robe<br />Prodavac poslastica – Poslastičar<br />Prodavac prehrambenih proizvoda<br 
+
+/>Prodavac mesa i mesnih prerađevina<br />Ugostiteljski prodavac\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>TEKSTILNA STRUKA</h3>\r\n<p>Krojač dečje odeće<br />Krojač ženske odeće<br />Krojač muške odeće<br 
+
+/>Krojač sportske odeće<br />Konfekcijski krojač<br />Konfekcijski radnik<br />Hemijski čistač i bojač<br />Izrađivač belog veza<br />Prelac<br />Pletač<br />Tkač<br />Ćilimar</p>\r\n<p> </p>\r\n</td>\r
+
+\n</tr>\r\n<tr>\r\n<td>\r\n<h3>SAOBRAĆAJNA STRUKA - DRUMSKI SAOBRAĆAJ</h3>\r\nVozač motornog vozila u drumskom saobraćaju<br />Kondukter u drumskom saobraćaju<br />Saobraćajni dispečer\r\n<p> </p>\r
+
+\n<p> </p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>ŽELEZNIČKI SAOBRAĆAJ</h3>\r\n<p>Manevarski mašinovođa<br />Ložač parne lokomotive<br />Čuvar pruge<br />Pregledač kola<br />Mašinovođa-operater<br />Vozovođa-
+
+operater<br />Kondukter u železničkom saobraćaju</p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>VODNI SAOBRAĆAJ</h3>\r\n<p>Lučki manipulant<br />Mornar<br />Kormilar<br />Splavar<br />Skeledžija<br 
+
+/>Navigator u rečnom saobraćaju</p>\r\n</td>\r\n<td>\r\n<h3>PTT SAOBRAĆAJ</h3>\r\nPoštanski radnik – Poštar<br />Telefonista-operater<br />Telegrafista-operater<br />Radnik u poštansko-štednoj službi\r
+
+\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>UNUTRAŠNJI TRANSPORT</h3>\r\n<p>Rukovalac unutrašnjeg transporta<br />Rukovalac viljuškara – Viljuškarista<br />Vozač elektrokara<br />Pretovarni 
+
+radnik</p>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<h3>UMETNIČKA STRUKA</h3>\r\n<p>Grafički dizajner<br />Dizajner ambalaže<br />Dizajner enterijera<br />Dizajner industrijskih proizvoda<br />Dizajner tekstila<br 
+
+/>Likovni dizajner</p>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>UGOSTITELJSKO-TURISTIČKA STRUKA</h3>\r\nProizvođač hrane – Kuvar-ka<br />Proizvođač poslastica – Poslastičar<br />Pica-majstor<br 
+
+/>Roštiljdžija<br />Sobarica<br />Servirka<br />Točilac pića<br />Uslužilac jela i pića – Konobar<br />Recepcionar<br />Turisički vodič</td>\r\n<td>\r\n<h3>ŠUMARSKA STRUKA</h3>\r\n<p>Čuvar šume – Šumar<br 
+
+/>Čuvar divljači – Lovočuvar<br />Šumar-lovočuvar<br />Šumski radnik<br />Šumski rasadničar<br />Šumski mehanizator<br />Šumski sekač motornom testerom<br />Uređivač zelenih površina</p>\r\n<p> </p>\r
+
+\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<h3>STRANI JEZICI</h3>\r\n<p>Engleski jezik<br />Nemački jezik<br />Francuski jezik<br />Ruski jezik<br />Italijanski jezik<br />Španski jezik<br />početni, srednji: 
+
+1,2,3, viši: 1,2,3, i konverzacioni-debatni/</p>\r\n</td>\r\n<td>\r\n<h3>HEMIJSKO-TEHNOLOŠKA STRUKA</h3>\r\nAutolakirer<br />Laborant<br />Izrađivač hemijskih proizvoda<br />Izrađivač celuloze i papira<br 
+
+/>Prerađivač nafte i naftnih derivata<br />Prerađivač gasa<br />Pirotehničar<br />Metalofarbar <br /></td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<h3>HIDROMETEOROLOŠKA STRUKA</h3>\r\n<p>Hidrološki 
+
+radnik<br />Meteorološki radnik<br />Hidro-meteorološki radnik</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>', '', 1, 0, 0, 0, '2009-04-03 08:22:54', 62, '', '2013-11-13 08:53:46', 42, 0, '0000-00-00 
+
+00:00:00', '2009-04-03 08:22:54', '0000-00-00 00:00:00', '', '', 
+
+'show_title=0\nlink_titles=0\nshow_intro=0\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_vote=0\nshow_author=0\nshow_create_date=0\nshow_modify_date=0\nshow_pdf_icon=
+
+\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 29, 0, 1, '', '', 0, 8716, 'robots=\nauthor='),
+(48, 'Naslovna', 'naslovna', '', '<p style="margin-bottom: 0in" align="justify"><strong 
+
+style="color: #222222; font-family: arial, sans-serif; font-size: 13px; line-height: normal;">Centar za stručno osposobljavanje kadrova d.o.o. Beograd</strong>, nastao je iz stalne potrebe građana da 
+
+unaprede sebe, steknu nova znanja, veštine, <span>reše probleme u vezi sa pronalaženjem posla ili zadržavanjem istog.</span></p>\r\n<p style="margin-bottom: 0in" align="justify"> </p>\r\n<p style="margin-
+
+bottom: 0in" align="justify"><span>Centar je osnovan 1997. godine, Rešenjem Privrednog suda u Beogradu pod brojem I-fi 1895/97, U svom višegodišnjem poslovanju, Centar je ostvario veoma uspešnu i dugotrajnu 
+
+saradnju sa brojnim preduzećima i firmama širom Srbije, Republike Srpske i Crne Gore, kao što su:</span><span> ''''</span><span>Metal</span><span>'''', </span><span>BNS 
+
+</span><span>''''</span><span>Inženjering</span><span>'''', </span><span>Društvo </span><span>''''</span><span>Rom</span><span>'''', </span><span>iz Obrenovca</span><span>; 
+
+''''</span><span>Zavarivač</span><span>'''', ''''</span><span>Alfa-plam</span><span>, ''''</span><span>Jumko</span><span>'''', ''''</span><span>Simpo</span><span>'''', </span><span>iz 
+
+Vranja</span><span>;'''' ''''</span><span>Tipoplastika</span><span>'''', </span><span>GIP </span><span>''''</span><span>Graditelj</span><span>'''', </span><span>DD 
+
+</span><span>''''</span><span>Zvezda</span><span>'''', </span><span>iz Gornjeg Milanovca</span><span>;</span><span> </span><span>''''</span><span>Kramer</span><span>''''</span><span>,</span><span> 
+
+</span><span>iz Kule</span><span>; ''''</span><span>Dekor</span><span>'''' </span><span>iz Sombora</span><span>; </span><span>REIK </span><span>''''</span><span>Kolubara</span><span>'''' </span><span>iz 
+
+Lazarevca</span><span>; </span><span>Parking Servis</span><span>'''' </span><span>iz Novog Sada</span><span>; </span><span>AD 
+
+</span><span>''''</span><span>Radijator</span><span>''''</span><span>,</span><span> </span><span>iz Zrenjanina</span><span>; </span><span>PIK </span><span>''''</span><span>Bečej</span><span>'''', 
+
+</span><span>JP</span><span> </span><span>Limske</span><span> </span><span>Hidroelektrane</span><span>, </span><span>Srbija šume</span><span>, </span><span>Dom za decu i omladinu 
+
+</span><span>''''</span><span>Vera</span><span> </span><span>Blagojević</span><span>''''</span><span>,</span><span> </span><span>iz Bele Crkve;</span><span> </span><span>Američki komitet za izbeglice iz 
+
+Beograda</span><span>, Н</span><span>V</span><span>О''''ОХ</span><span>V</span><span>АМ </span><span>CB</span><span>'''' </span><span>iz Beograda</span><span>, ''''</span><span>Beograd vode</span><span>'''', 
+
+''''</span><span>Beograd put</span><span>'''', ''''Eurocom internasional'''', </span><span>IMT </span><span>''''</span><span>Simiotik</span><span>'''', ''''</span><span>Zora-zo</span><span> 
+
+</span><span>d.o.o. Beograd</span><span>, </span><span>ABS </span><span>''''</span><span>MInel-Trafo</span><span> </span><span>a.d. Mladenovac</span><span>,</span><span> ’’Udruženje humanost’’, Dom za decu 
+
+’’Moša Pijade’’, AD ’’Krušik-Plastika’’, ’’Uradi sam’’ a.d. Beograd, Građevimar Kocić d.o.o. Beograd, ’’Leon’’ d.o.o.Ub, ’’Interspeed’’ a.d., TE ’’Pljevlja’’, Rudnik uglja Pljevlja iz Crne Gore 
+
+itd.</span></p>\r\n<ul>\r\n<li><span>Više hiljada ljudi je kroz Centar stručno osposobljeno za rad za više od 200 zanimanja u okviru 29 struka, organizovanjem brojnih kurseva i obuka. </span></li>\r\n</ul>
+
+\r\n<ul>\r\n<li><span><span style="color: #222222; font-family: arial, sans-serif; font-size: 13px; line-height: normal;">Centar za stručno osposobljavanje kadrova d.o.o. Beograd</span>, obavlja delatnost 
+
+obrazovanja odraslih, koje nije u sistemu redovnog školskog obrazovanja i nije definisano prema stepenima stručnost, već na nivou kurseva i tečajeva do godinu dana, koji se izvode prema nastavnom planu i 
+
+programu Centra.</span></li>\r\n</ul>\r\n<ul>\r\n<li><span>Po završetku </span><span>stručnog osposobljavanja za rad u trajanju do godinu dana, kandidatima se izdaju odgovarajuće<strong> 
+
+</strong></span><span style="font-size: x-small;"><span><strong>DIPLOME</strong> i <strong>SERTIFIKATI</strong></span></span><span> za određeno zanimanje, a u okviru odgovarajuće struke, dok se za proveru 
+
+znanja stranih jezika i proveru brzine kucanja, izdaju odgovarajuća </span><strong><span style="font-size: x-small;"><span>UVERENJA</span></span></strong><span>.</span></li>\r\n</ul>\r\n<ul>\r\n<li><span>Za 
+
+potrebe teorijske nastave, Centar u svom timu ima veliki broj iskusnih profesora koji garantuju kvalitet u obuci kadrova za različita zanimanja.</span></li>\r\n</ul>', '', 1, 0, 0, 0, '2009-03-27 14:50:32', 
+
+62, '', '2014-10-31 08:17:45', 73, 0, '0000-00-00 00:00:00', '2009-03-27 14:50:32', '0000-00-00 00:00:00', '', '', 
+
+'show_title=0\nlink_titles=0\nshow_intro=0\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_vote=0\nshow_author=0\nshow_create_date=0\nshow_modify_date=0\nshow_pdf_icon=
+
+\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 8, 0, 2, '', '', 0, 1729, 'robots=\nauthor=');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET 
+
+CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
